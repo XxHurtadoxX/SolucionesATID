@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Soluciones A.T.I.D | Herramientas y Piezas Industriales</title>
+    <meta name="description" content="Catálogo completo de herramientas industriales: fresas de tungsteno, insertos de carburo y porta insertos. Calidad profesional para la industria.">
+    
+    <!-- Favicon (logo blanco recortado) -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/e9N9a29.png">
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/e9N9a29.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/e9N9a29.png">
+    
+    <!-- Open Graph / Facebook (logo a color para compartir) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xxhurtadoxx.github.io/SolucionesATID/catalogo.html">
+    <meta property="og:title" content="Catálogo - Soluciones A.T.I.D | Herramientas Industriales">
+    <meta property="og:description" content="Catálogo completo de herramientas industriales: fresas de tungsteno, insertos de carburo y porta insertos profesionales.">
+    <meta property="og:image" content="https://i.imgur.com/e9N9a29.png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:site_name" content="Soluciones A.T.I.D">
+    <meta property="og:locale" content="es_CO">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://xxhurtadoxx.github.io/SolucionesATID/catalogo.html">
+    <meta name="twitter:title" content="Catálogo - Soluciones A.T.I.D | Herramientas Industriales">
+    <meta name="twitter:description" content="Catálogo completo de herramientas industriales profesionales.">
+    <meta name="twitter:image" content="https://i.imgur.com/e9N9a29.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos del catálogo */
+        .catalog-hero {
+            background: linear-gradient(135deg, var(--dark-blue), var(--black));
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .catalog-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .catalog-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .catalog-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .catalog-section:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(48, 158, 226, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            padding: 20px;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-utility {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .product-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-to-home:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            color: var(--white);
+        }
+
+        .catalog-footer-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .catalog-footer-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .catalog-footer-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-home {
+                position: static;
+                margin: 20px;
+                align-self: flex-start;
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home -->
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i>
+        Volver al inicio
+    </a>
+
+    <!-- Hero Section -->
+    <section class="catalog-hero">
+        <div class="container">
+            <h1>Catálogo de Herramientas</h1>
+            <p>Herramientas y piezas industriales de alta calidad para profesionales</p>
+        </div>
+    </section>
+
+    <!-- Fresas Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fresas de Acero de Tungsteno</h2>
+                <p>Herramientas de corte de alta precisión para mecanizado profesional</p>
+            </div>
+            <div class="catalog-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/ToIYyea.png" alt="Fresa 3mm">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fresa de Acero de Tungsteno HRC65 - 3mm</h3>
+                        <p class="product-utility">Ideal para mecanizado de precisión en materiales duros, fresado de acabado fino y operaciones de alta velocidad en aceros templados y aleaciones especiales.</p>
+                        <span class="product-category">Fresa</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/g0a0his.png" alt="Fresa 6mm">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fresa de Acero de Tungsteno HRC65 - 6mm</h3>
+                        <p class="product-utility">Perfecta para fresado de desbaste y semiacabado en aceros endurecidos, moldes y matrices. Excelente para operaciones de ranurado y contorneado.</p>
+                        <span class="product-category">Fresa</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/jAxwQED.png" alt="Fresa 8mm">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fresa de Acero de Tungsteno HRC65 - 8mm</h3>
+                        <p class="product-utility">Diseñada para trabajos de fresado en materiales de dureza media-alta, ideal para mecanizado de componentes automotrices y piezas de maquinaria industrial.</p>
+                        <span class="product-category">Fresa</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/43MiJS5.png" alt="Fresa 10mm">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fresa de Acero de Tungsteno HRC65 - 10mm</h3>
+                        <p class="product-utility">Excelente para operaciones de desbaste pesado y fresado de cavidades profundas. Ideal para trabajos en aceros inoxidables y aleaciones resistentes.</p>
+                        <span class="product-category">Fresa</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/7nmaqn8.png" alt="Fresa 12mm">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fresa de Acero de Tungsteno HRC65 - 12mm</h3>
+                        <p class="product-utility">Herramienta robusta para fresado de producción en serie, mecanizado de bloques grandes y operaciones que requieren alta remoción de material.</p>
+                        <span class="product-category">Fresa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insertos Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Insertos de Carburo</h2>
+                <p>Insertos de alta resistencia para torneado de precisión</p>
+            </div>
+            <div class="catalog-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/2nlPBzO.png" alt="DCMT11T304">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Insertos de Carburo DCMT11T304</h3>
+                        <p class="product-utility">Diseñados para torneado de acabado y semiacabado en aceros, hierros fundidos y materiales no ferrosos. Geometría optimizada para operaciones de alta precisión.</p>
+                        <span class="product-category">Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/mmlj6xs.png" alt="MGMN300">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Insertos Cuchillas de Torno MGMN300</h3>
+                        <p class="product-utility">Ideales para operaciones de ranurado, tronzado y torneado en espacios reducidos. Perfectos para trabajos de precisión en tornos CNC y convencionales.</p>
+                        <span class="product-category">Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/0WZofoo.png" alt="16ER AG60">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Insertos 16ER AG60 para Roscado</h3>
+                        <p class="product-utility">Especializados en operaciones de roscado interno y externo. Proporcionan roscas de alta calidad con excelente acabado superficial en diversos materiales.</p>
+                        <span class="product-category">Inserto Roscado</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/dllUVdQ.png" alt="CCMT09T308">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Insertos de Carburo CCMT09T308</h3>
+                        <p class="product-utility">Versátiles para torneado general, desbaste ligero y operaciones de acabado. Excelente durabilidad y resistencia al desgaste en aceros al carbono.</p>
+                        <span class="product-category">Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/P1LJwzz.png" alt="CCMT09T304">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Insertos de Carburo CCMT09T304</h3>
+                        <p class="product-utility">Optimizados para trabajos de acabado fino y torneado de precisión. Ideales para componentes que requieren tolerancias estrictas y acabado superficial superior.</p>
+                        <span class="product-category">Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/Vl2jKQn.png" alt="WNMG080408">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Insertos de Carburo WNMG080408-MA</h3>
+                        <p class="product-utility">Diseñados para operaciones de desbaste pesado y torneado de alta remoción de material. Excelentes para trabajos en aceros duros y fundiciones.</p>
+                        <span class="product-category">Inserto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Porta Insertos Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Porta Insertos</h2>
+                <p>Portaherramientas de precisión para máxima estabilidad</p>
+            </div>
+            <div class="catalog-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/K9ATngL.png" alt="Porta Inserto SDJCR2020K11">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Porta Inserto SDJCR2020K11</h3>
+                        <p class="product-utility">Portaherramientas externo de 20×20 mm (serie 2020), compatible con insertos DCMT11T304, DCMT11T308, entre otras referencias estándar DCMT11. Ideal para torneado de precisión con sujeción segura y alta repetibilidad.</p>
+                        <span class="product-category">Porta Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/DsEvLot.png" alt="Porta Inserto MGERHR2020MGMN300">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Porta Inserto MGERHR2020/MGMN300</h3>
+                        <p class="product-utility">Porta de 20×20 mm (serie 2020) para ranurado y tronzado, compatible con insertos MGMN200, MGMN300 y MGMN400. Compacto, robusto y diseñado para máxima rigidez en espacios reducidos.</p>
+                        <span class="product-category">Porta Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/Dv0cyXD.png" alt="Porta Inserto SER2020K16">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Porta Inserto SER2020K16</h3>
+                        <p class="product-utility">Portaherramientas de roscado de 20×20 mm (serie 2020), diseñado para insertos 16ER AG60, 16IR AG60. Permite roscado de alta precisión en pasadas de 0.5–3 mm, con control de virutas optimizado.</p>
+                        <span class="product-category">Porta Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/ZRypPf2.png" alt="Porta Inserto S20R-SCLCR09">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Porta Inserto S20R-SCLCR09</h3>
+                        <p class="product-utility">Portaherramientas de 20×20 mm (serie 2020) para insertos CCMT09T308 y CCMT09T304. Ideal para torneado general y de acabado, con excelente control de vibraciones y estabilidad.</p>
+                        <span class="product-category">Porta Inserto</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.imgur.com/lJ5riFn.png" alt="Porta Inserto MWLNR2020K08">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Porta Inserto MWLNR2020K08</h3>
+                        <p class="product-utility">Herramienta de 20×20 mm (serie 2020) para insertos WNMG080408-MA y variantes WNMG0804. Diseñada para operaciones de desbaste pesado, ofreciendo alta resistencia y firmeza ante cargas elevadas.</p>
+                        <span class="product-category">Porta Inserto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="catalog-footer-cta">
+        <div class="container">
+            <h3>¿Necesitas alguna herramienta específica?</h3>
+            <p>Contáctanos para cotizaciones personalizadas y asesoría técnica</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/573188999331?text=Hola, me interesa conocer más sobre sus herramientas industriales" class="cta-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+                <a href="index.html#contacto" class="cta-btn">
+                    <i class="fas fa-envelope"></i>
+                    Formulario de contacto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Soluciones A.T.I.D. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

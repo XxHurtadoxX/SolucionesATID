@@ -609,6 +609,102 @@ body {
     color: var(--primary-blue);
 }
 
+/* Tools Promo Section */
+.tools-promo {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.tools-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tools-text h3 {
+    font-size: 1.8rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.tools-text p {
+    color: var(--gray);
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.tools-features {
+    margin-bottom: 40px;
+}
+
+.tool-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.tool-feature i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-top: 5px;
+    min-width: 24px;
+}
+
+.tool-feature h4 {
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.tool-feature p {
+    color: var(--gray);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.tools-preview {
+    position: relative;
+}
+
+.tool-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.tool-preview-item {
+    background: var(--light-gray);
+    border-radius: var(--border-radius-lg);
+    padding: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.tool-preview-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-lg);
+}
+
+.tool-preview-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+}
+
+.tool-preview-item span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -931,6 +1027,16 @@ body {
 
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tools-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .tool-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .contact-content {
