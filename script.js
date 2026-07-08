@@ -127,7 +127,7 @@ function initializeAnimations() {
     }, observerOptions);
 
     // Add animation classes to elements
-    const animatedElements = document.querySelectorAll('.service-card, .gallery-item, .feature, .contact-item');
+    const animatedElements = document.querySelectorAll('.service-card, .gallery-item, .client-card, .feature, .contact-item');
     animatedElements.forEach((el, index) => {
         el.classList.add('fade-in');
         el.style.transitionDelay = `${index * 0.1}s`;
